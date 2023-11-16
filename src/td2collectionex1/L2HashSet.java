@@ -5,6 +5,7 @@
 package td2collectionex1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -37,10 +38,7 @@ public class L2HashSet implements Universite{
     
     @Override
     public void ajouterEtudiant(Etudiant e) {
-        if (rechercherEtudiant(e) && rechercherEtudiant(e.getNom())){
-            System.out.println("Etudiant "+e.getNom()+" Existe deja");
-        }
-        else LH.add(e);
+        LH.add(e);
         System.out.println("Etudiant "+e.getNom()+" a ete ajouté avec succes");
     }
 
@@ -60,7 +58,7 @@ public class L2HashSet implements Universite{
     @Override
     public void supprimerEtudiant(Etudiant e) {
        
-            if (rechercherEtudiant(e) && rechercherEtudiant(e.getNom()) ){
+            if (rechercherEtudiant(e)  ){
                 LH.remove(e);
             }
             else System.out.println("l'etudiant "+e.getNom()+" n existe pas");
@@ -83,20 +81,35 @@ public class L2HashSet implements Universite{
     @Override
     public void trierEtudiantsParId() {
     // the right way
-    ArrayList<Etudiant> arrayList = new ArrayList<Etudiant>(LH);
+    // l'autre façon nrodou toArray();
+    /*ArrayList<Etudiant> arrayList = new ArrayList<Etudiant>(LH);
       Collections.sort(arrayList);
       for (Etudiant e : arrayList){
           System.out.println(e);
-      }
+      }*/
+      Etudiant[] tabEtud = new Etudiant[LH.size()];
+      this.LH.toArray(tabEtud);
+      Arrays.sort(tabEtud);
     }
 
     @Override
     public void trierEtudiantsParNom() {
-       ArrayList<Etudiant> a = new ArrayList<>(LH);
+       /*ArrayList<Etudiant> a = new ArrayList<>(LH);
        Collections.sort(a,com);
        for (Etudiant e : a){
           System.out.println(e);
-      }
+      }*/
+       TreeSet treeSet = new TreeSet<Etudiant>(new Comparator<Etudiant>(){
+           @Override
+           public int compare(Etudiant o1, Etudiant o2) {
+                  return o1.getNom().compareTo(o2.getNom());
+           }
+           
+       });
+       treeSet.addAll(LH);
+      
+       
     }
-    
+
+ 
 }

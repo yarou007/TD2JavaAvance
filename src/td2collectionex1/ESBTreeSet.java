@@ -30,13 +30,10 @@ public class ESBTreeSet implements Universite {
 
     @Override
     public void ajouterEtudiant(Etudiant e) {
-        if (rechercherEtudiant(e) && rechercherEtudiant(e.getNom())){
-                System.out.println("Etudiant "+e.getNom()+" Existe deja ");
-            }
-            else {
+        
                 s.add(e);
-                System.out.println("Ajout d'etudiant "+e.getNom()+" Avec succes");
-            }
+               System.out.println("Ajout d'etudiant "+e.getNom()+" Avec succes");
+            
     }
 
     @Override
@@ -56,7 +53,7 @@ public class ESBTreeSet implements Universite {
 
     @Override
     public void supprimerEtudiant(Etudiant e) {
-        if (rechercherEtudiant(e) && rechercherEtudiant(e.getNom())) {
+        if (rechercherEtudiant(e) ) {
             s.remove(e);
             System.out.println(e.getNom() + " A ete supprimer de la liste");
 
@@ -79,6 +76,7 @@ public class ESBTreeSet implements Universite {
         afficherEtudiants();
     }
 
+    
     @Override
     public void trierEtudiantsParNom() {
         ArrayList<Etudiant> a = new ArrayList<>(s);

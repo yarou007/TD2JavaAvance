@@ -16,6 +16,9 @@ public class Etudiant implements Comparable<Etudiant> {
     private String prenom;
 
     public Etudiant() {
+        this.id=0;
+        this.nom="";
+        this.prenom="";
     }
 
     public Etudiant(int id, String nom, String prenom) {
@@ -62,27 +65,32 @@ public class Etudiant implements Comparable<Etudiant> {
         return hash;
     }
     
-
+    // utiliser pour structure de donneés ( bech tji ) 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj) {  // pointé sur nafs case memoire 
             return true;
         }
-        if (obj == null) {
+        if (obj == null) { //
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass()) { // fard classe
             return false;
         }
-        final Etudiant other = (Etudiant) obj;
+        
+       Etudiant other = (Etudiant) obj;
        
-        return Objects.equals(this.id, other.id);
+        return this.id==other.id;
     }
 
     @Override
     public int compareTo(Etudiant that) {
-            return this.id > that.id?1:-1;               
+           //return this.id > that.id?1:-1;     
+            return this.id - that.id;
     }
+
+    
+    
     
     
     

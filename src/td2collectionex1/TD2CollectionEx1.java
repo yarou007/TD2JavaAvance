@@ -19,6 +19,10 @@ public class TD2CollectionEx1 {
      */
     public static void main(String[] args) {
         
+        /*Etudiant ee = new Etudiant(22,"Mohamed","Yassine");
+        System.out.println(ee);
+        Etudiant e3 = new Etudiant(22,"m","s");
+        System.out.println(ee.compareTo(e3));*/
         //// Classe Vector
         // Instantation
        /* Etudiant e1 = new Etudiant (2,"Yassine","P");
@@ -75,28 +79,31 @@ public class TD2CollectionEx1 {
         System.out.println("Trier par Nom : ");
         l.trierEtudiantsParNom();
         l.afficherEtudiants();
-       
+       */
        // HashSet
-       /* Etudiant e1 = new Etudiant (2,"Yassine","P");
+        Etudiant e1 = new Etudiant (2,"Yassine","P");
         Etudiant e2 = new Etudiant (1,"Eya","P");
         Etudiant e3 = new Etudiant (7,"Slim","P");
         Etudiant e4 = new Etudiant (3,"Aroua","P");
         Etudiant e5 = new Etudiant (8,"Nour","P");
         Etudiant e6 = new Etudiant (10,"Ahmed","P");
+        
         L2HashSet h =  new L2HashSet();
          h.ajouterEtudiant(e1);
         h.ajouterEtudiant(e2);
         h.ajouterEtudiant(e3);
         h.ajouterEtudiant(e4);
         h.ajouterEtudiant(e5);
+       // System.out.println(h.LH);
         h.afficherEtudiants();
         System.out.println("Trier par id: ");
         h.trierEtudiantsParId();
       //  h.afficherEtudiants();
-       System.out.println("Trier par NOM: ");
-        h.trierEtudiantsParNom();*/
+       //System.out.println("Trier par NOM: ");
+       // h.trierEtudiantsParNom();
        
        // TreeSet
+       /*
         Etudiant e1 = new Etudiant (2,"Yassine","P");
         Etudiant e2 = new Etudiant (1,"Eya","P");
         Etudiant e3 = new Etudiant (7,"Slim","P");
@@ -115,7 +122,7 @@ public class TD2CollectionEx1 {
       //  h.afficherEtudiants();
        System.out.println("Trier par NOM: ");
         t.trierEtudiantsParNom();
-       
+       */
     }
     
 }
